@@ -4,25 +4,21 @@
 
 **Criação de projeto pelo template Typescript:** `create-react-app gobarberfrontend --template=typescript`
 
-**Instalar o React-Router-DOM:** `yarn add react-router-dom`
+**Instalar o React-Router-DOM:** `yarn add react-router-dom @types/react-router-dom`
 
-**Instalar os tipos do React-Router-DOM:** `yarn add @types/react-router-dom`
+**Instalar o Styled-Components:** `yarn add styled-components @types/styled-components`
 
-**Instalar o Styled-Components:** `yarn add styled-components`
-
-**Instalar os tipos do Styled-Components:** `yarn add @types/styled-components`
-
-**Instalar bilbioteca de cores:** `yarn add polished`
+**Instalar lib de cores:** `yarn add polished`
 
 **Instalar React-Icons:** `yarn add react-icons`
 
 **Instalar Axios**: `yarn add axios`
 
+**Instalar lib para Formulários**: `yarn add @unform/core @unform/web`
+
 yarn add uuidv4
 
 yarn add react-spring
-
-yarn add @unform/core
 
 - Depois de instalar o template, todos os arquivos vamos colcoar dentro da pasta 'src'.
 - Então, vamos criar uma pasta 'assets' e uma subpasta 'images'. Nela deixaremos as imagens da nossa página.
@@ -39,3 +35,7 @@ Vamos fazer algumas alterações em arquivos do template que não vamos utilizar
 - Excluir o serviceWorker.ts
 - Excluir o setupTests.ts
 - Abrir os arquivos 'index.tsx', App.tsx' e 'index.html' e remover as linhas que chamavam os arquivos que excluímos
+
+# Formulário de Signup
+
+Com a bilbioteca unform, precisamos fazer o registro dos inputs. Isso significa que preciso informar quais campos do formulário vai monitorar, para trazer o valor quando der submit.

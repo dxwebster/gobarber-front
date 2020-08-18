@@ -19,6 +19,7 @@ export const Container = styled.div`
     flex: 1;
     background: transparent;
     border: 0;
+    color: #fff;
 
     &::placeholder {
       color: #666360;
