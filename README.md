@@ -38,4 +38,28 @@ Vamos fazer algumas alterações em arquivos do template que não vamos utilizar
 
 # Formulário de Signup
 
-Com a bilbioteca unform, precisamos fazer o registro dos inputs. Isso significa que preciso informar quais campos do formulário vai monitorar, para trazer o valor quando der submit.
+[Documentação do Unform](https://unform.dev/guides/basic-form/)
+
+Utilizamos a bilbioteca Unform para fazer o registro dos valores dos inputs. Isso significa que preciso informar quais campos do formulário vai monitorar, para trazer o valor quando der submit. Pra isso vamos usar o useField() e passar como parâmetro o nome do input, que vai funcionar como um id, ou seja, precisa ser único para cada input.
+
+Pela função useField() eu consigo extrair 3 propriedades:
+
+- fieldName: nome do input
+- defaultValue: valor padrão inicial (pode ser vazio)
+- registerField: a função que vai registrar os valores
+
+Agora vamos colocar a função registerField, dentro de um useEffect para ser executada assim que o fieldName e o registerField mudarem.
+
+```tsx
+useEffect(() => {
+  registerField({
+    name: fieldName,
+    ref: inputRef.current,
+    path: 'value',
+  });
+}, [fieldName, registerField]);
+```
+
+## Função: useCallback()
+
+Sempre que tivermos uma função que está dentro de outra função, vamos usar o useCallback(). Esta é uma ferramenta do React que faz com que essa função que está dentro da outra função (componente) não seja recriado toda vez que o componente atualiza (muda de estado)
