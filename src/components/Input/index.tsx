@@ -6,13 +6,16 @@ import React, {
   useCallback,
 } from 'react';
 
-import { IconBaseProps } from 'react-icons'; // permite setar as propriedades de um icone
-import { useField } from '@unform/core';
-import { Container } from './styles';
+import { IconBaseProps } from 'react-icons'; // seta as propriedades do icon
+import { FiAlertCircle } from 'react-icons/fi'; // seta as propriedades do icon
+import { useField } from '@unform/core'; // lida com os inputs dos form
 
+import { Container, Error } from './styles';
+
+// criamos a interface do input que receberá duas propriedades novas: name e icon
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
-  icon?: React.ComponentType<IconBaseProps>; //  transforma o icon em component
+  icon?: React.ComponentType<IconBaseProps>; // transforma o icon em component
 }
 
 const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
@@ -20,7 +23,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   const [isFilled, setIsFilled] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const { fieldName, defaultValue, registerField } = useField(name);
+  const { fieldName, defaultValue, error, registerField } = useField(name);
 
   // função que lida quando o input ganha foco
   const handleInputFocus = useCallback(() => {
@@ -44,7 +47,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
 
   // retorno do Input
   return (
-    <Container isFilled={isFilled} isFocused={isFocused}>
+    <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused}>
       {Icon && <Icon size={20} />}
       <input
         onFocus={handleInputFocus}
@@ -53,6 +56,11 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
         ref={inputRef}
         {...rest}
       />
+      {error && (
+        <Error title={error}>
+          <FiAlertCircle color="#c53030" size={20} />
+        </Error>
+      )}
     </Container>
   );
 };

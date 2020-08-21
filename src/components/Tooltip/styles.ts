@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
+
   span {
-    background: #01baef;
+    background: #ff9000;
     border-radius: 4px;
     bottom: calc(100% + 12px);
     color: #312e38;
@@ -15,11 +16,12 @@ export const Container = styled.div`
     position: absolute;
     transform: translateX(-50%);
     transition: all 0.2s;
-    visibility: hidden;
+    visibility: hidden; /*esconde o elemento da DOM */
     width: 160px;
+
     &::before {
       content: '';
-      border-color: #01baef transparent;
+      border-color: #ff9000 transparent;
       border-style: solid;
       border-width: 6px 6px 0 6px;
       left: 50%;
@@ -28,6 +30,7 @@ export const Container = styled.div`
       transform: translateX(-50%);
     }
   }
+
   &:hover span {
     opacity: 1;
     visibility: visible;
