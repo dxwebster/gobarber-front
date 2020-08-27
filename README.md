@@ -111,3 +111,5 @@ useEffect(() => {
 Sempre que tivermos uma função que está dentro de outra função, vamos usar o useCallback(). Esta é uma ferramenta do React que faz com que essa função que está dentro da outra função (componente) não seja recriado toda vez que o componente atualiza (muda de estado).
 
 ## Component: Sign Up
+
+<h3> 🚧 Em construção... 🚧</h3>
