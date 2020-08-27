@@ -5,6 +5,7 @@ import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
 import { useAuth } from '../../hooks/AuthContext';
+import { useToast } from '../../hooks/ToastContext';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 import logoImg from '../../assets/logo.svg';
@@ -22,6 +23,7 @@ const Signin: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useAuth();
+  const { addToast } = useToast();
 
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
@@ -35,17 +37,29 @@ const Signin: React.FC = () => {
           password: Yup.string().required('Senha obrigatória'),
         });
 
-        await schema.validate(data, { abortEarly: false });
-        signIn({
+        await schema.validate(data, {
+          abortEarly: false,
+        });
+
+        await signIn({
           email: data.email,
           password: data.password,
         });
       } catch (err) {
-        const errors = getValidationErrors(err);
-        formRef.current?.setErrors(errors);
+        // se o erro for gerado pelo Yupi, retorna o erro
+        if (err instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(err);
+          formRef.current?.setErrors(errors);
+        }
+        // senão, vai disparar um toast
+        addToast({
+          type: 'error',
+          title: 'Erro na autenticação',
+          description: 'Ocorreu um  erro ao fazer login, cheque as credenciais',
+        });
       }
     },
-    [signIn]
+    [signIn, addToast]
   );
 
   return (

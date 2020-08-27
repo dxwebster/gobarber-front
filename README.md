@@ -38,6 +38,27 @@ Vamos fazer algumas alterações em arquivos do template que não vamos utilizar
 - Excluir o setupTests.ts
 - Abrir os arquivos 'index.tsx', App.tsx' e 'index.html' e remover as linhas que chamavam os arquivos que excluímos
 
+## Component: Input
+
+Nossa aplicação contém muitos inputs de formulário com o mesmo design, portanto vamos criar um component especifíco para esses inputs que será replicado quando necessário. Utilizaremos algumas bibliotecas:
+
+InputHTMLAttributes do react. Um input do HTML contém alguns atributos padrão como placeholder, value, id, etc. O InputHTMLAttributes permite adicionar outros atributos customizados a um input, que não existem por padrão.
+
+Nosso input sempre vai conter um ícone e um nome. Portanto vamos utilizar o InputHTMLAtributes para adicionar esses dois atributos como propriedades ao nosso component input. Para isso, criaremos uma interface, onde definiremos essas propriedades, assim como seus tipos.
+
+Também vamos transformar nosso icone em um component, porque ele precisa mudar pra cada input que aparecer na aplicação e nos permite estiliza-lo também de forma independente. Para isso vamos utilizar a biblioteca: IconBaseProps do react-icons.
+
+No final a interface vai ficar assim:
+
+```tsx
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  name: string;
+  icon?: React.ComponentType<IconBaseProps>;
+}
+```
+
+- useField do unform, que nos permite lidar com os inputs de formulário de uma formma mais simples.
+
 # Formulário de Signup
 
 [Documentação do Unform](https://unform.dev/guides/basic-form/)
@@ -64,27 +85,6 @@ useEffect(() => {
 
 ## Função: useCallback()
 
-Sempre que tivermos uma função que está dentro de outra função, vamos usar o useCallback(). Esta é uma ferramenta do React que faz com que essa função que está dentro da outra função (componente) não seja recriado toda vez que o componente atualiza (muda de estado)
-
-## Component: Input
-
-Nossa aplicação contém muitos inputs de formulário com o mesmo design, portanto vamos criar um component especifíco para esses inputs que será replicado quando necessário. Utilizaremos algumas bibliotecas:
-
-InputHTMLAttributes do react. Um input do HTML contém alguns atributos padrão como placeholder, value, id, etc. O InputHTMLAttributes permite adicionar outros atributos customizados a um input, que não existem por padrão.
-
-Nosso input sempre vai conter um ícone e um nome. Portanto vamos utilizar o InputHTMLAtributes para adicionar esses dois atributos como propriedades ao nosso component input. Para isso, criaremos uma interface, onde definiremos essas propriedades, assim como seus tipos.
-
-Também vamos transformar nosso icone em um component, porque ele precisa mudar pra cada input que aparecer na aplicação e nos permite estiliza-lo também de forma independente. Para isso vamos utilizar a biblioteca: IconBaseProps do react-icons.
-
-No final a interface vai ficar assim:
-
-```tsx
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string;
-  icon?: React.ComponentType<IconBaseProps>;
-}
-```
-
-- useField do unform, que nos permite lidar com os inputs de formulário de uma formma mais simples.
+Sempre que tivermos uma função que está dentro de outra função, vamos usar o useCallback(). Esta é uma ferramenta do React que faz com que essa função que está dentro da outra função (componente) não seja recriado toda vez que o componente atualiza (muda de estado).
 
 ## Component: Sign Up
