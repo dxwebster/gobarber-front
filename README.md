@@ -1,29 +1,7 @@
 # Front-end
 
-## 📚 Instalação e Configuração das Bibliotecas Front-End
-
 **Criação de projeto pelo template Typescript:** `create-react-app gobarberfrontend --template=typescript`
-
-**Instalar o React-Router-DOM:** `yarn add react-router-dom @types/react-router-dom -D`
-
-**Instalar o Styled-Components:** `yarn add styled-components @types/styled-components -D`
-
-**Instalar lib de cores:** `yarn add polished`
-
-**Instalar React-Icons:** `yarn add react-icons`
-
-**Instalar Axios**: `yarn add axios`
-
-**Instalar lib para Formulários**: `yarn add @unform/core @unform/web`
-
-**Instalar lib para validação de formulário**: `yarn add yup @types/yup -D`
-
-yarn add uuidv4
-
-yarn add react-spring
-
-- Depois de instalar o template, todos os arquivos vamos colcoar dentro da pasta 'src'.
-- Então, vamos criar uma pasta 'assets' e uma subpasta 'images'. Nela deixaremos as imagens da nossa página.
+Depois de instalar o template, vamos colocar todos o projeto dentro da pasta 'src' e limpar a estrutura do template.
 
 ## Limpar estrutura do Template
 
@@ -37,6 +15,24 @@ Vamos fazer algumas alterações em arquivos do template que não vamos utilizar
 - Excluir o serviceWorker.ts
 - Excluir o setupTests.ts
 - Abrir os arquivos 'index.tsx', App.tsx' e 'index.html' e remover as linhas que chamavam os arquivos que excluímos
+
+## 📚 Instalação e Configuração das Bibliotecas Front-End
+
+- **React-Router-DOM:** `yarn add react-router-dom`
+- **Styled-Components:** `yarn add styled-components`
+- **Cores:** `yarn add polished`
+- **React-Icons:** `yarn add react-icons`
+- **Axios**: `yarn add axios`
+- **Formulários**: `yarn add @unform/core @unform/web`
+- **Validação de formulário**: `yarn add yup`
+- **Animações**: `yarn add react-spring`
+- **Criação de ids**: `yarn add uuidv4`
+
+Dependências de desenvolvimento:
+
+- **Tipos do React-Router-DOM:** `yarn add @types/react-router-dom -D`
+- **Tipos do Styled-Components:** `yarn add @types/styled-components -D`
+- **Tipos do Validação de formulário**: `yarn add @types/yup -D`
 
 ## Component: Input
 
