@@ -1,6 +1,7 @@
 # Front-end
 
-**Criação de projeto pelo template Typescript:** `create-react-app gobarberfrontend --template=typescript`
+**Criação de projeto pelo template Typescript:** `create-react-app gobarberfrontend --template=typescript`.
+
 Depois de instalar o template, vamos colocar todos o projeto dentro da pasta 'src' e limpar a estrutura do template.
 
 ## Limpar estrutura do Template
