@@ -17,20 +17,20 @@
 
 ---
 
-# 📥 Executar esse projeto no seu computador
+## 📥 Executar esse projeto no seu computador
 
 - Clonar Repositório: `git clone https://github.com/dxwebster/GoBarber-Frontend.git`
 - Ir para a pasta: `cd GoBarber-Frontend`
 - Instalar dependências: `yarn install`
 - Rodar Aplicação: `yarn start`
 
-# 💡 Como criar esse projeto do zero
+## 💡 Como criar esse projeto do zero
 
 **Criação de projeto pelo template Typescript:** `create-react-app gobarberfrontend --template=typescript`.
 
 Depois de instalar o template, vamos colocar todos o projeto dentro da pasta 'src' e limpar a estrutura do template.
 
-## Limpar estrutura do Template
+### Limpar estrutura do Template
 
 Vamos fazer algumas alterações em arquivos do template que não vamos utilizar, ou que vamos recriar depois.
 
@@ -43,7 +43,7 @@ Vamos fazer algumas alterações em arquivos do template que não vamos utilizar
 - Excluir o setupTests.ts
 - Abrir os arquivos 'index.tsx', App.tsx' e 'index.html' e remover as linhas que chamavam os arquivos que excluímos
 
-## 📚 Instalação e Configuração das Bibliotecas Front-End
+### 📚 Instalação e Configuração das Bibliotecas Front-End
 
 - **React-Router-DOM:** `yarn add react-router-dom`
 - **Styled-Components:** `yarn add styled-components`
@@ -61,7 +61,7 @@ Dependências de desenvolvimento:
 - **Tipos do Styled-Components:** `yarn add @types/styled-components -D`
 - **Tipos do Validação de formulário**: `yarn add @types/yup -D`
 
-## Component: Input
+### Component: Input
 
 Nossa aplicação contém muitos inputs de formulário com o mesmo design, portanto vamos criar um component especifíco para esses inputs que será replicado quando necessário. Utilizaremos algumas bibliotecas:
 
@@ -82,7 +82,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 O useField do unform, que nos permite lidar com os inputs de formulário de uma formma mais simples.
 
-# Formulário de Signup
+### Formulário de Signup
 
 [Documentação do Unform](https://unform.dev/guides/basic-form/)
 
@@ -106,8 +106,8 @@ useEffect(() => {
 }, [fieldName, registerField]);
 ```
 
-## Função: useCallback()
+### Função: useCallback()
 
 Sempre que tivermos uma função que está dentro de outra função, vamos usar o useCallback(). Esta é uma ferramenta do React que faz com que essa função que está dentro da outra função (componente) não seja recriado toda vez que o componente atualiza (muda de estado).
 
-## Component: Sign Up
+### Component: Sign Up
