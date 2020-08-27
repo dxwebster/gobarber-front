@@ -11,13 +11,11 @@
 <p align=center>
 <img src="readme/Capa.png" width=600><br>
 
-<h6 align=center>
+<h5 align=center>
 
 🎨 Design por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/)
 
-</h6>
-
-<br><br>
+</h5>
 
 </p>
 
