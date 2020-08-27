@@ -17,14 +17,14 @@
 
 ---
 
-## 📥 Executar esse projeto no seu computador
+# 📥 Executar esse projeto no seu computador
 
 - Clonar Repositório: `git clone https://github.com/dxwebster/GoBarber-Frontend.git`
 - Ir para a pasta: `cd GoBarber-Frontend`
 - Instalar dependências: `yarn install`
 - Rodar Aplicação: `yarn start`
 
-# Como criar esse projeto do zero
+# 💡 Como criar esse projeto do zero
 
 **Criação de projeto pelo template Typescript:** `create-react-app gobarberfrontend --template=typescript`.
 
