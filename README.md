@@ -1,12 +1,13 @@
 <h1 align=center> GoBarber</h1>
 
 <p align=center> Aplicação que permite agendamentos de dia/horário no cabeleireiro.</p>
+
 💻 **Acesse a aplicação [aqui](https://gobarber-appp.herokuapp.com/)**
 
 <p align=center>
 <img src="readme/Capa.png" width=600><br>
 
-🎨 Design por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/)
+<h6 align=center>🎨 Design por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/) </h6>
 
 <br><br>
 
