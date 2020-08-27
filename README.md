@@ -1,7 +1,7 @@
 <p align=center>
-<img src="readme/Capa.png" width=600><br>
 
 <h5 align=center>
+<img src="readme/Capa.png" width=600><br>
 
 🎨 Design por [Tiago Luchtenberg](https://www.instagram.com/tiagoluchtenberg/)
 
