@@ -7,12 +7,6 @@
 
 </h5>
 
-<h3 align=center>
-
-💻 **Acesse a aplicação [aqui](https://gobarber-appp.herokuapp.com/)**
-
-</h3>
-
 </p>
 
 ---
