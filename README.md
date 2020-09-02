@@ -11,6 +11,9 @@
 
 ---
 
+# 🔖  Sobre
+Essa é o front-end da GoBarber, uma aplicação que permite o agendamento de serviços de cabeleireiros.
+
 ## 📥 Executar esse projeto no seu computador
 
 - Clonar Repositório: `git clone https://github.com/dxwebster/GoBarber-Frontend.git`
