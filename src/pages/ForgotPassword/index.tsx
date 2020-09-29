@@ -5,7 +5,7 @@ import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
 
-import { useToast } from '../../hooks/ToastContext';
+import { useToast } from '../../hooks/toast';
 
 import getValidationErrors from '../../utils/getValidationErrors';
 import logoImg from '../../assets/logo.svg';

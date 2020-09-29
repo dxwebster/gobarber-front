@@ -13,7 +13,7 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 
 import { Container, Content, AnimationContainer, Background } from './styles';
-import { useToast } from '../../hooks/ToastContext';
+import { useToast } from '../../hooks/toast';
 
 interface SignUpFormData {
   name: string;
