@@ -1,10 +1,4 @@
-import React, {
-  InputHTMLAttributes,
-  useEffect,
-  useState,
-  useRef,
-  useCallback,
-} from 'react';
+import React, { InputHTMLAttributes, useEffect, useState, useRef, useCallback } from 'react';
 
 import { IconBaseProps } from 'react-icons'; // seta as propriedades do icon
 import { FiAlertCircle } from 'react-icons/fi'; // seta as propriedades do icon
@@ -49,13 +43,7 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   return (
     <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused}>
       {Icon && <Icon size={20} />}
-      <input
-        onFocus={handleInputFocus}
-        onBlur={handleInputBlur}
-        defaultValue={defaultValue}
-        ref={inputRef}
-        {...rest}
-      />
+      <input onFocus={handleInputFocus} onBlur={handleInputBlur} defaultValue={defaultValue} ref={inputRef} {...rest} />
       {error && (
         <Error title={error}>
           <FiAlertCircle color="#c53030" size={20} />
