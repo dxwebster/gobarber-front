@@ -128,7 +128,7 @@ const Dashboard: React.FC = () => {
   // Aqui vou pegar o primeiro agendamento que seja depois do horario atual
   // Pra isso, converto a data de string para formato data com o parseISO e uso o isAfter do datefns para comparar com a data/horário atual
   const nextAppointment = useMemo(() => {
-    return appointments.find((Appointment) => isAfter(parseISO(Appointment.date), new Date()));
+    return appointments.find((appointment) => isAfter(parseISO(appointment.date), new Date()));
   }, [appointments]);
 
   return (
