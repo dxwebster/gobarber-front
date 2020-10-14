@@ -4,6 +4,7 @@ import SignIn from '../../pages/Signin';
 
 const mockedHistoryPush = jest.fn();
 const mockedSignIn = jest.fn();
+const mockedAddToast = jest.fn();
 
 // mockup do funcionamento da função useHistory que vem do react-router-dom
 jest.mock('react-router-dom', () => {
@@ -18,6 +19,15 @@ jest.mock('../../hooks/auth', () => {
   return {
     useAuth: () => ({
       signIn: mockedSignIn,
+    }),
+  };
+});
+
+// mockup quando dispara um erro e exibe o toast
+jest.mock('../../hooks/toast', () => {
+  return {
+    useToast: () => ({
+      addToast: mockedAddToast,
     }),
   };
 });
@@ -61,6 +71,31 @@ describe('SignIn Page', () => {
     // expera que seja redirecionado para o dashboard
     await waitFor(() => {
       expect(mockedHistoryPush).not.toHaveBeenCalled;
+    });
+  });
+
+  it('should display an error if login fails', async () => {
+    mockedSignIn.mockImplementation(() => {
+      throw new Error(); // dispara um erro quando tenta fazer o signin
+    });
+
+    const { getByPlaceholderText, getByText } = render(<SignIn />);
+
+    const emailField = getByPlaceholderText('Email');
+    const passwordField = getByPlaceholderText('Senha');
+    const buttonElement = getByText('Entrar');
+
+    fireEvent.change(emailField, { target: { value: 'johndoe@example.com' } });
+    fireEvent.change(passwordField, { target: { value: '123456' } });
+
+    fireEvent.click(buttonElement);
+
+    await waitFor(() => {
+      expect(mockedAddToast).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: 'error',
+        })
+      );
     });
   });
 });
