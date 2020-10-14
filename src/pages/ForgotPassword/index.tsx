@@ -33,9 +33,7 @@ const ForgotPassword: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          email: Yup.string()
-            .required('Email obrigatório')
-            .email('Digite um email válido'),
+          email: Yup.string().required('Email obrigatório').email('Digite um email válido'),
         });
 
         await schema.validate(data, {
@@ -51,8 +49,7 @@ const ForgotPassword: React.FC = () => {
         addToast({
           type: 'success',
           title: 'E-mail de recuperação de senha enviado',
-          description:
-            'Enviamos um email para recuperar sua senha, olhe sua caixa de entrada.',
+          description: 'Enviamos um email para recuperar sua senha, olhe sua caixa de entrada.',
         });
       } catch (err) {
         // se o erro for gerado pelo Yupi, retorna o erro
@@ -66,8 +63,7 @@ const ForgotPassword: React.FC = () => {
         addToast({
           type: 'error',
           title: 'Erro na recuperação de senha',
-          description:
-            'Ocorreu um  erro ao tentar recuperar sua senha. Tente novamente',
+          description: 'Ocorreu um  erro ao tentar recuperar sua senha. Tente novamente',
         });
       } finally {
         setLoading(false);
@@ -84,7 +80,7 @@ const ForgotPassword: React.FC = () => {
 
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Recuperar Senha</h1>
-            <Input name="email" icon={FiMail} placeholder="Email"></Input>
+            <Input name="email" icon={FiMail} placeholder="Email" />
 
             <Button loading={loading} type="submit">
               Recuperar
