@@ -33,9 +33,7 @@ const Signin: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
-          email: Yup.string()
-            .required('Email obrigatório')
-            .email('Digite um email válido'),
+          email: Yup.string().required('Email obrigatório').email('Digite um email válido'),
           password: Yup.string().required('Senha obrigatória'),
         });
 
@@ -76,14 +74,14 @@ const Signin: React.FC = () => {
 
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Faça seu logon</h1>
-            <Input name="email" icon={FiMail} placeholder="Email"></Input>
+            <Input name="email" icon={FiMail} placeholder="Email" />
 
             <Input
               name="password"
               icon={FiLock} // passando um component como propriedade de outro component
               type="password"
               placeholder="Senha"
-            ></Input>
+            />
 
             <Button type="submit">Entrar</Button>
 

@@ -52,7 +52,7 @@ const Profile: React.FC = () => {
               then: Yup.string().required('Campo obrigatório'),
               otherwise: Yup.string(),
             })
-            .oneOf([Yup.ref('password'), undefined], 'Confirmação incorreta'),
+            .oneOf([Yup.ref('password'), null], 'Confirmação incorreta'),
         });
 
         await schema.validate(data, {
@@ -142,13 +142,13 @@ const Profile: React.FC = () => {
 
           <h1>Meu perfil</h1>
 
-          <Input name="name" icon={FiUser} placeholder="Nome"></Input>
-          <Input name="email" icon={FiMail} placeholder="Email"></Input>
+          <Input name="name" icon={FiUser} placeholder="Nome" />
+          <Input name="email" icon={FiMail} placeholder="Email" />
 
           <div className="password-box">
-            <Input name="old_password" icon={FiLock} type="password" placeholder="Senha atual"></Input>
-            <Input name="password" icon={FiLock} type="password" placeholder="Nova Senha"></Input>
-            <Input name="password_confirmation" icon={FiLock} type="password" placeholder="Confirmar Nova Senha"></Input>
+            <Input name="old_password" icon={FiLock} type="password" placeholder="Senha atual" />
+            <Input name="password" icon={FiLock} type="password" placeholder="Nova Senha" />
+            <Input name="password_confirmation" icon={FiLock} type="password" placeholder="Confirmar Nova Senha" />
           </div>
           <Button type="submit">Confirmar mudanças</Button>
         </Form>

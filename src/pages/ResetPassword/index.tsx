@@ -36,10 +36,7 @@ const Signin: React.FC = () => {
         // Cria uma validação
         const schema = Yup.object().shape({
           password: Yup.string().required('Senha obrigatória'),
-          password_confirmation: Yup.string().oneOf(
-            [Yup.ref('password'), undefined],
-            'Confirmação incorreta'
-          ),
+          password_confirmation: Yup.string().oneOf([Yup.ref('password'), null], 'Confirmação incorreta'),
         });
 
         // passa a validação
@@ -91,18 +88,8 @@ const Signin: React.FC = () => {
           <Form ref={formRef} onSubmit={handleSubmit}>
             <h1>Resetar senha</h1>
 
-            <Input
-              name="password"
-              icon={FiLock}
-              type="password"
-              placeholder="Nova Senha"
-            ></Input>
-            <Input
-              name="password_confirmation"
-              icon={FiLock}
-              type="password"
-              placeholder="Confirmação da Senha"
-            ></Input>
+            <Input name="password" icon={FiLock} type="password" placeholder="Nova Senha" />
+            <Input name="password_confirmation" icon={FiLock} type="password" placeholder="Confirmação da Senha" />
 
             <Button type="submit">Alterar senha</Button>
           </Form>
