@@ -23,7 +23,7 @@ jest.mock('../../hooks/auth', () => {
   };
 });
 
-// mockup quando dispara um erro e exibe o toast
+// mockup de um erro quee exibe o toast
 jest.mock('../../hooks/toast', () => {
   return {
     useToast: () => ({
@@ -33,9 +33,8 @@ jest.mock('../../hooks/toast', () => {
 });
 
 describe('SignIn Page', () => {
-  // executa uma função antes de cada teste
   beforeEach(() => {
-    mockedHistoryPush.mockClear();
+    mockedHistoryPush.mockClear(); // limpa o mockup de hostórico antes de cada teste
   });
 
   it('should be able to sign in', async () => {
