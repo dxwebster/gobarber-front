@@ -25,12 +25,12 @@ export const Container = styled.div<ContainerProps>`
   }
 
   /* Quando a propriedade isErrored for true, adiciona o css */
-/* Ou seja, quando o input com erro, deixa a borda vermelha */
-${(props) =>
-  props.isErrored &&
-  css`
-    border-color: #c53030;
-  `}
+  /* Ou seja, quando o input com erro, deixa a borda vermelha */
+  ${(props) =>
+    props.isErrored &&
+    css`
+      border-color: #c53030;
+    `}
 
   /* Quando a propriedade isFocused for true, adicionar o css */
   /* Ou seja, quando o input tiver focado, deixa o texto e borda laranjas */
@@ -44,10 +44,10 @@ ${(props) =>
 /* Quando a propriedade isFilled for true, adiciona o css */
 /* Ou seja, quando o input estiver preenchido, mantém o texto laranja */
     ${(props) =>
-      props.isFilled &&
-      css`
-        color: #ff9000;
-      `}
+    props.isFilled &&
+    css`
+      color: #ff9000;
+    `}
 
 
 
